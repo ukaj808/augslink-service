@@ -1,0 +1,34 @@
+h1 {
+    color: red;
+}
+
+.current_song-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current__song-time-container {
+    width: 60%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.current__time-slider {
+    width: 75%;
+}
+.current__vol-slider {
+    width: 75%;
+}
+
+.current__volume-container {
+    display: flex;
+    width: 60%;
+    height: 5%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

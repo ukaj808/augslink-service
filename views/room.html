@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>creating room...</title>
+    <script type="module" src="/public/scripts/room.js"></script>
+    <script type="module" src="/public/scripts/current-section.js"></script>
+    <script type="module" src="/public/scripts/democracy-section.js"></script>
+    <script type="module" src="/public/scripts/drop-section.js"></script>
+    <script type="module" src="/public/scripts/order-section.js"></script>
+    <script type="module" src="/public/scripts/queue-section.js"></script>
+    <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico" />
+    <link rel="stylesheet" href="/public/styles/room.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main id="room" class="room">
+      <order-section
+        id="order"
+        class="order"
+        img="img/alt.png"
+        data-text="Your card validation code (CVC)
+            is an extra security feature — it is the last 3 or 4 numbers on the
+            back of your card."
+      ></order-section>
+
+      <democracy-section
+        id="democracy"
+        class="democracy"
+        img="img/alt.png"
+        data-text="Your card validation code (CVC)
+            is an extra security feature — it is the last 3 or 4 numbers on the
+            back of your card."
+      ></democracy-section>
+
+      <drop-section
+        id="drop"
+        class="drop"
+        img="img/alt.png"
+        data-text="Your card validation code (CVC)
+            is an extra security feature — it is the last 3 or 4 numbers on the
+            back of your card."
+      ></drop-section>
+
+      <current-section
+        id="current"
+        class="current"
+        img="img/alt.png"
+        data-text="Your card validation code (CVC)
+            is an extra security feature — it is the last 3 or 4 numbers on the
+            back of your card."
+      ></current-section>
+
+      <queue-section
+        id="queue"
+        class="queue"
+        img="img/alt.png"
+        data-text="Your card validation code (CVC)
+            is an extra security feature — it is the last 3 or 4 numbers on the
+            back of your card."
+      ></queue-section>
+    </main>
+  </body>
+</html>

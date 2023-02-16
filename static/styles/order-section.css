@@ -1,0 +1,37 @@
+.user-order-list {
+    list-style: none;
+    width: 95%;
+    height: 95%;
+    overflow: auto;
+    counter-reset: user-order;
+}
+
+.user-order-list__user {
+    width: 95%;
+    height: 10%;
+    background-color: var(--tertiary-bg-color);
+    /* For spacing between users */
+    margin-top: 10px;
+
+    display: flex;
+    /* This is "magically" making the image fit in the div and maintaining its ratio as it resizes */
+    justify-content: space-evenly;
+
+    font-size: 30px;
+
+    border-radius: var(--section-border-radius);
+}
+
+.user-order-list__order-lbl {
+    align-self: center;
+    padding-left: 10px;
+}
+
+.user-order-list__order-lbl::before {
+    counter-increment: user-order;
+    content: counter(user-order);
+}
+
+.user-order-list__username-lbl {
+    align-self: center;
+}

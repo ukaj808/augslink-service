@@ -1,15 +1,25 @@
 module AugsLink.Service.Application ( server ) where
 
-import Data.Proxy (Proxy(..))
-import Network.Wai (Application)
-import Servant (Server, serveDirectoryWebApp)
-import Servant.Server (serve)
+import Servant 
 
-import AugsLink.Service.API (API)
+import AugsLink.Service.API ( API )
+import CommandLine ( CLArgs ( staticDirPath ) )
+import AugsLink.Service.Handlers.GetHome ( home )
+import AugsLink.Service.Handlers.PostHome ( create )
+import AugsLink.Service.Handlers.RoomWs ( enter )
+import AugsLink.Service.Handlers.GetRoom ( room )
 
+import AugsLink.Core.API
 
-handlers :: Server API
-handlers = serveDirectoryWebApp undefined
+handlers :: CLArgs -> Registry IO -> Server API
+handlers opts rr = 
+         home opts
+    :<|> create rr
+    :<|> room opts
+    :<|> enter rr
+    :<|> public
+  where 
+    public = serveDirectoryWebApp $ staticDirPath opts
 
-server :: Application
-server = serve (Proxy @API) handlers
+server :: CLArgs -> Registry IO -> Application
+server opts rr = serve (Proxy @API) (handlers opts rr) 

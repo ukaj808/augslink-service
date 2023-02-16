@@ -19,15 +19,41 @@ common warnings
 executable augslink-service
     import:           warnings
     main-is:          Main.hs
-    other-modules:      AugsLink.Service.API
+
+    other-modules:      AugsLink.Core.API
+                      , AugsLink.Core.Model 
+                      , AugsLink.Core.Room 
+                      , AugsLink.Internal.State 
+                      , AugsLink.Service.API 
                       , AugsLink.Service.Application 
+                      , AugsLink.Service.Handlers.GetHome 
+                      , AugsLink.Service.Handlers.GetRoom 
+                      , AugsLink.Service.Handlers.PostHome
+                      , AugsLink.Service.Handlers.RoomWs 
                       , CommandLine 
     -- other-extensions:
-    build-depends:      base ^>=4.16.4.0
+    build-depends:       aeson
+                      ,  async
+                      ,  base ^>=4.17.0.0
+                      , bytestring
+                      , containers
+                      , http-media
+                      , mtl
                       , optparse-applicative
+                      , random 
                       , servant-server
+                      , servant-websockets
+                      , text 
+                      , unordered-containers
+                      , uuid
                       , wai
                       , warp
+                      , websockets
+
     hs-source-dirs:   app
     default-language: GHC2021
     default-extensions: DataKinds
+                       
+                     ,  TypeFamilies
+                     ,  DeriveAnyClass
+                     ,  DeriveGeneric

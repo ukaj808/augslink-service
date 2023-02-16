@@ -1,0 +1,89 @@
+:root {
+    font-family: 'Archivo', sans-serif;
+    --primary-bg-color: #202125;
+    --primary-fnt-color: white;
+    --primary-btn-bg-color: #303135;
+    --main-btn-bg-disabled-color: #464646;
+
+    --bar-size: 5px;
+    --bar-radius: 60px;
+    --bar-bg: #eef1f3;
+    --progress-color: #75b800;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    height: 95%;
+}
+
+.welcome {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome__greeting {
+    color: var(--primary-fnt-color);
+    font-size: 80px;
+    text-align: center;
+}
+
+.welcome__button {
+    width: 250px;
+    height: 50px;
+    border-radius: 5px;
+
+    background-color: var(--primary-btn-bg-color);
+    color: var(--primary-fnt-color);
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.welcome__button--disabled {
+    pointer-events:none;
+    background-color: var(--main-btn-bg-disabled-color);
+}
+
+@keyframes loader {
+    0% {width: 0;}
+    20% {width: 50px;}
+    25% {width: 70px;}
+    43% {width: 120px;}
+    56% {width: 150px;}
+    66% {width: 190px;}
+    71% {width: 210px;}
+    75% {width: 230px;}
+    94% {width: 280px;}
+    100% {width: 300px;}
+}
+
+.welcome__bar {
+    display: block;
+    margin-top: 50px;
+    border-radius: var(--bar-radius);
+    background: var(--bar-bg);
+    overflow: hidden;
+    width: 300px;
+}
+
+.welcome__bar--hidden {
+    visibility: hidden;
+}
+
+.welcome__progress {
+    display: block;
+    animation: loader 8s ease infinite;
+    background: var(--progress-color);
+    padding: var(--bar-size);
+    width: 0;
+}
+
